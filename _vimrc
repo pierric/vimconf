@@ -2,7 +2,6 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-Bundle 'gmarik/vundle'
 Bundle 'L9'
 Bundle 'https://github.com/vim-scripts/cscope.vim.git'
 Bundle 'https://github.com/steffanc/cscopemaps.vim.git'
