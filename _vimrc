@@ -1,12 +1,21 @@
 set nocompatible
 filetype off
+if has('win32') || has('win64')
+    set rtp+=~/vimfiles/bundle/vundle/
+else    
 set rtp+=~/.vim/bundle/vundle/
+endif
 call vundle#rc()
+Bundle 'gmarik/vundle'
 Bundle 'L9'
 Bundle 'https://github.com/vim-scripts/cscope.vim.git'
 Bundle 'https://github.com/steffanc/cscopemaps.vim.git'
 Bundle 'https://github.com/milkypostman/vim-togglelist.git'
 Bundle 'bling/vim-airline'
+Bundle 'kien/ctrlp.vim'
+" Bundle 'xolox/vim-misc'
+" Bundle 'xolox/vim-session'
+Bundle 'tacahiroy/ctrlp-funky'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/Mark--Karkat'
@@ -30,6 +39,20 @@ set t_Co=256
 set browsedir=buffer
 syntax on
 
+if has('win32') || has('win64')
+    set encoding=utf-8
+    language messages zh_CN.utf-8
+    set fileencodings=ucs-bom,utf-8,gbk,cp936
+    set guifont=DejaVu_Sans_Mono_for_Powerline:h12
+    set guifontwide=NSimSun:h12
+    let g:vimwiki_list = [{'path': 'C:/Workspace/VIM/vimwiki/', 
+                        \  'path_html': 'C:/Workspace/VIM/vimhtml/',
+                        \  'template_path': 'C:/Workspace/VIM/templates/',
+                        \  'template_default': 'default',
+                        \  'template_ext': '.html'}]
+    let g:vimwiki_use_calendar = 1
+	let g:vimwiki_valid_html_tags = 'center,strong,font' 
+endif
 
 " nmap <Tab> <c-w><c-w><c-w>=
 " nmap <F2>  :Explore<cr>
@@ -53,10 +76,14 @@ syntax on
 if has('ctrlp')
     let g:ctrlp_map = '<c-p>'
     let g:ctrlp_cmd = 'CtrlP'
+    let g:ctrlp_extensions = ['funky']
+    nnoremap <Leader>fu :CtrlPFunky<Cr>
+    " narrow the list down with a word under cursor
+    nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 endif
 
-let g:session_autosave = 'no'
-let g:session_autoload = 'no'
+" let g:session_autosave = 'no'
+" let g:session_autoload = 'no'
 
 " function! AirlineInit()
 "     let g:airline_section_a = airline#section#create(['mode',' ','branch'])
