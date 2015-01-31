@@ -3,7 +3,7 @@ filetype off
 if has('win32') || has('win64')
     set rtp+=~/vimfiles/bundle/vundle/
 else    
-set rtp+=~/.vim/bundle/vundle/
+    set rtp+=~/.vim/bundle/vundle/
 endif
 call vundle#rc()
 Bundle 'gmarik/vundle'
@@ -19,6 +19,7 @@ Bundle 'tacahiroy/ctrlp-funky'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/Mark--Karkat'
+Bundle 'https://github.com/vim-scripts/mru.vim.git'
 filetype plugin indent on
 set fileencodings=ucs-bom,utf-8,gbk,cp936
 set tags=tags;
