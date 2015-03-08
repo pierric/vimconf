@@ -95,11 +95,17 @@ endif
 "     let g:airline_section_z = airline#section#create_right(['%l','%c'])
 " endfunction
 " autocmd VimEnter * call AirlineInit()
+let g:airline_extensions        = ['tabline']
 let g:airline_theme             = 'powerlineish'
 let g:airline_enable_branch     = 1
 let g:airline_enable_syntastic  = 1
 let g:airline_powerline_fonts   = 1
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled         = 1
+let g:airline#extensions#tabline#show_buffers    = 1
+let g:airline#extensions#tabline#show_tabs       = 0
+let g:airline#extensions#tabline#show_tab_nr     = 0
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 let $PATH .=':/home/sg1/.cabal/bin'
 let g:tagbar_type_haskell = {
@@ -135,3 +141,21 @@ let g:tagbar_type_haskell = {
 \ }
 let g:tagbar_left = 1
 nmap <F8> :TagbarToggle<CR>
+
+
+" set filetype for MLton
+" .fun is not recognized as SML file by default
+au BufNewFile,BufRead *.fun set filetype=sml
+
+" easy switch between buffers
+":nnoremap <Leader>] :buffers<CR>:buffer<Space>
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
+
