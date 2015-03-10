@@ -103,7 +103,8 @@ let g:airline#extensions#tabline#show_buffers    = 1
 let g:airline#extensions#tabline#show_tabs       = 0
 let g:airline#extensions#tabline#show_tab_nr     = 0
 let g:airline#extensions#tabline#buffer_idx_mode = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline#extensions#tabline#formatter = 'default'
+let g:airline#extensions#tabline#fnamemod  = ':t'
 
 let $PATH .=':/home/sg1/.cabal/bin'
 let g:tagbar_type_haskell = {
@@ -156,4 +157,8 @@ nmap <leader>6 <Plug>AirlineSelectTab6
 nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
+nmap <leader>9 <Plug>AirlineSelectTab9
+nmap <C-[> <Plug>AirlineSelectPrevTab
+nmap <C-]> <Plug>AirlineSelectNextTab
 
+nmap <leader>= :MRU<CR>
