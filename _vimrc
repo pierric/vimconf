@@ -1,25 +1,29 @@
+if has('win32') || has('win64')
+	set encoding=utf-8
+	language messages zh_cn.UTF-8
+	set fileencodings=ucs-bom,utf-8,gbk,cp936
+	set guifont=DejaVu_Sans_Mono_for_Powerline:h11
+	set guifontwide=NSimSun:h11
+endif
 set nocompatible
 filetype off
-if has('win32') || has('win64')
-    set rtp+=~/vimfiles/bundle/vundle/
-else    
-    set rtp+=~/.vim/bundle/vundle/
-endif
-call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'L9'
-Bundle 'https://github.com/vim-scripts/cscope.vim.git'
-Bundle 'https://github.com/steffanc/cscopemaps.vim.git'
-Bundle 'https://github.com/milkypostman/vim-togglelist.git'
-Bundle 'bling/vim-airline'
-Bundle 'kien/ctrlp.vim'
-" Bundle 'xolox/vim-misc'
-" Bundle 'xolox/vim-session'
-Bundle 'tacahiroy/ctrlp-funky'
-Bundle 'vim-scripts/taglist.vim'
-Bundle 'majutsushi/tagbar'
-Bundle 'vim-scripts/Mark--Karkat'
-Bundle 'https://github.com/vim-scripts/mru.vim.git'
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
+Plugin 'gmarik/vundle'
+Plugin 'L9'
+Plugin 'vim-scripts/calendar.vim--Matsumoto'
+Plugin 'vimwiki/vimwiki'
+Plugin 'vim-scripts/cscope.vim'
+Plugin 'steffanc/cscopemaps.vim'
+Plugin 'milkypostman/vim-togglelist'
+Plugin 'bling/vim-airline'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tacahiroy/ctrlp-funky'
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'vim-scripts/Mark--Karkat'
+Plugin 'https://github.com/vim-scripts/mru.vim.git'
+call vundle#end()
 filetype plugin indent on
 set fileencodings=ucs-bom,utf-8,gbk,cp936
 set tags=tags;
@@ -41,11 +45,6 @@ set browsedir=buffer
 syntax on
 
 if has('win32') || has('win64')
-    set encoding=utf-8
-    language messages zh_CN.utf-8
-    set fileencodings=ucs-bom,utf-8,gbk,cp936
-    set guifont=DejaVu_Sans_Mono_for_Powerline:h12
-    set guifontwide=NSimSun:h12
     let g:vimwiki_list = [{'path': 'C:/Workspace/VIM/vimwiki/', 
                         \  'path_html': 'C:/Workspace/VIM/vimhtml/',
                         \  'template_path': 'C:/Workspace/VIM/templates/',
@@ -162,3 +161,4 @@ nmap <C-[> <Plug>AirlineSelectPrevTab
 nmap <C-]> <Plug>AirlineSelectNextTab
 
 nmap <leader>= :MRU<CR>
+set guioptions-=m
