@@ -144,7 +144,7 @@ nmap <F8> :TagbarToggle<CR>
 " set filetype for MLton
 " .fun is not recognized as SML file by default
 au BufNewFile,BufRead *.fun set filetype=sml
-
+au BufNewFile,BufRead *.sig set filetype=sml
 " easy switch between buffers
 ":nnoremap <Leader>] :buffers<CR>:buffer<Space>
 nmap <leader>1 <Plug>AirlineSelectTab1
@@ -157,8 +157,8 @@ nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
 nmap <leader>9 <Plug>AirlineSelectTab9
-nmap <C-[> <Plug>AirlineSelectPrevTab
-nmap <C-]> <Plug>AirlineSelectNextTab
+nmap <leader>[ <Plug>AirlineSelectPrevTab
+nmap <leader>] <Plug>AirlineSelectNextTab
 
 nmap <leader>= :MRU<CR>
 set guioptions-=m
