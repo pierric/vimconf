@@ -2,8 +2,6 @@ if has('win32') || has('win64')
 	set encoding=utf-8
 	language messages zh_cn.UTF-8
 	set fileencodings=ucs-bom,utf-8,gbk,cp936
-	set guifont=DejaVu_Sans_Mono_for_Powerline:h11
-	set guifontwide=NSimSun:h11
 endif
 set nocompatible
 filetype off
@@ -22,7 +20,8 @@ Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/Mark--Karkat'
-Plugin 'https://github.com/vim-scripts/mru.vim.git'
+Plugin 'vim-scripts/mru.vim.git'
+Plugin 'scrooloose/nerdtree'
 call vundle#end()
 filetype plugin indent on
 set fileencodings=ucs-bom,utf-8,gbk,cp936
@@ -137,8 +136,16 @@ let g:tagbar_type_haskell = {
     \ }
 \ }
 let g:tagbar_left = 1
-nmap <F8> :TagbarToggle<CR>
 
+autocmd vimenter * NERDTree                 "open NERDTree on startup
+let g:NERDTreeDirArrowExpandable  = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeShowBookmarks       = '1'
+
+nmap <C-M> :MRU<CR>
+nmap <F8>  :TagbarToggle<CR>
+nmap <C-n> :NERDTree %<CR>:wincmd p<CR>     " refresh the NERDTREE, and switch back to working buffer
+nmap <space> viw                            " select the current word
 
 " set filetype for MLton
 " .fun is not recognized as SML file by default
@@ -159,5 +166,4 @@ nmap <F8> :TagbarToggle<CR>
 " nmap <leader>[ <Plug>AirlineSelectPrevTab
 " nmap <leader>] <Plug>AirlineSelectNextTab
 " 
-" nmap <leader>= :MRU<CR>
 set guioptions-=m
