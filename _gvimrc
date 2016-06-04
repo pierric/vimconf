@@ -1,3 +1,4 @@
 set lines=60
 set columns=160
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h10
+set guifontwide=NSimSun:h10
