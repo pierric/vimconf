@@ -9,14 +9,14 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
-Plugin 'gmarik/vundle'
 Plugin 'L9'
 Plugin 'vim-scripts/calendar.vim--Matsumoto'
 Plugin 'vimwiki/vimwiki'
-Plugin 'vim-scripts/cscope.vim'
-Plugin 'steffanc/cscopemaps.vim'
+" Plugin 'vim-scripts/cscope.vim'
+" Plugin 'steffanc/cscopemaps.vim'
 Plugin 'milkypostman/vim-togglelist'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'vim-scripts/taglist.vim'
@@ -44,15 +44,15 @@ set t_Co=256
 set browsedir=buffer
 syntax on
 
-if has('win32') || has('win64')
-    let g:vimwiki_list = [{'path': 'C:/Workspace/VIM/vimwiki/', 
-                        \  'path_html': 'C:/Workspace/VIM/vimhtml/',
-                        \  'template_path': 'C:/Workspace/VIM/templates/',
-                        \  'template_default': 'default',
-                        \  'template_ext': '.html'}]
-    let g:vimwiki_use_calendar = 1
-	let g:vimwiki_valid_html_tags = 'center,strong,font' 
-endif
+" if has('win32') || has('win64')
+"     let g:vimwiki_list = [{'path': 'C:/Workspace/VIM/vimwiki/', 
+"                         \  'path_html': 'C:/Workspace/VIM/vimhtml/',
+"                         \  'template_path': 'C:/Workspace/VIM/templates/',
+"                         \  'template_default': 'default',
+"                         \  'template_ext': '.html'}]
+"     let g:vimwiki_use_calendar = 1
+" 	let g:vimwiki_valid_html_tags = 'center,strong,font' 
+" endif
 
 " nmap <Tab> <c-w><c-w><c-w>=
 " nmap <F2>  :Explore<cr>
@@ -105,7 +105,6 @@ let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline#extensions#tabline#formatter = 'default'
 let g:airline#extensions#tabline#fnamemod  = ':t'
 
-let $PATH .=':/home/sg1/.cabal/bin'
 let g:tagbar_type_haskell = {
     \ 'ctagsbin'  : 'hasktags',
     \ 'ctagsargs' : '-x -c -o-',
@@ -143,22 +142,22 @@ nmap <F8> :TagbarToggle<CR>
 
 " set filetype for MLton
 " .fun is not recognized as SML file by default
-au BufNewFile,BufRead *.fun set filetype=sml
-au BufNewFile,BufRead *.sig set filetype=sml
+" au BufNewFile,BufRead *.fun set filetype=sml
+" au BufNewFile,BufRead *.sig set filetype=sml
 " easy switch between buffers
 ":nnoremap <Leader>] :buffers<CR>:buffer<Space>
-nmap <leader>1 <Plug>AirlineSelectTab1
-nmap <leader>2 <Plug>AirlineSelectTab2
-nmap <leader>3 <Plug>AirlineSelectTab3
-nmap <leader>4 <Plug>AirlineSelectTab4
-nmap <leader>5 <Plug>AirlineSelectTab5
-nmap <leader>6 <Plug>AirlineSelectTab6
-nmap <leader>7 <Plug>AirlineSelectTab7
-nmap <leader>8 <Plug>AirlineSelectTab8
-nmap <leader>9 <Plug>AirlineSelectTab9
-nmap <leader>9 <Plug>AirlineSelectTab9
-nmap <leader>[ <Plug>AirlineSelectPrevTab
-nmap <leader>] <Plug>AirlineSelectNextTab
-
-nmap <leader>= :MRU<CR>
+" nmap <leader>1 <Plug>AirlineSelectTab1
+" nmap <leader>2 <Plug>AirlineSelectTab2
+" nmap <leader>3 <Plug>AirlineSelectTab3
+" nmap <leader>4 <Plug>AirlineSelectTab4
+" nmap <leader>5 <Plug>AirlineSelectTab5
+" nmap <leader>6 <Plug>AirlineSelectTab6
+" nmap <leader>7 <Plug>AirlineSelectTab7
+" nmap <leader>8 <Plug>AirlineSelectTab8
+" nmap <leader>9 <Plug>AirlineSelectTab9
+" nmap <leader>9 <Plug>AirlineSelectTab9
+" nmap <leader>[ <Plug>AirlineSelectPrevTab
+" nmap <leader>] <Plug>AirlineSelectNextTab
+" 
+" nmap <leader>= :MRU<CR>
 set guioptions-=m
