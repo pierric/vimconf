@@ -12,9 +12,9 @@ Plugin 'L9'
 " Plugin 'vimwiki/vimwiki'
 " Plugin 'vim-scripts/cscope.vim'
 " Plugin 'steffanc/cscopemaps.vim'
-Plugin 'milkypostman/vim-togglelist'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+" Plugin 'milkypostman/vim-togglelist'
+" Plugin 'vim-airline/vim-airline'
+" Plugin 'vim-airline/vim-airline-themes'
 " Plugin 'kien/ctrlp.vim'
 " Plugin 'tacahiroy/ctrlp-funky'
 " Plugin 'vim-scripts/taglist.vim'
@@ -24,6 +24,7 @@ Plugin 'vim-scripts/mru.vim.git'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Yggdroot/LeaderF'
 Plugin 'thaerkh/vim-workspace'
+Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 filetype plugin indent on
 set fileencodings=ucs-bom,utf-8,gbk,cp936
@@ -43,17 +44,18 @@ set ruler
 set laststatus=2
 set t_Co=256
 set browsedir=buffer
+set lines=45
 syntax on
 
 let g:Lf_ShortcutF = '<C-P>'
 " if has('win32') || has('win64')
-"     let g:vimwiki_list = [{'path': 'C:/Workspace/VIM/vimwiki/', 
+"     let g:vimwiki_list = [{'path': 'C:/Workspace/VIM/vimwiki/',
 "                         \  'path_html': 'C:/Workspace/VIM/vimhtml/',
 "                         \  'template_path': 'C:/Workspace/VIM/templates/',
 "                         \  'template_default': 'default',
 "                         \  'template_ext': '.html'}]
 "     let g:vimwiki_use_calendar = 1
-" 	let g:vimwiki_valid_html_tags = 'center,strong,font' 
+" 	let g:vimwiki_valid_html_tags = 'center,strong,font'
 " endif
 
 " nmap <Tab> <c-w><c-w><c-w>=
@@ -106,7 +108,7 @@ let g:Lf_ShortcutF = '<C-P>'
 " let g:airline#extensions#tabline#buffer_idx_mode = 1
 " let g:airline#extensions#tabline#formatter = 'default'
 " let g:airline#extensions#tabline#fnamemod  = ':t'
-" 
+"
 " let g:tagbar_type_haskell = {
 "     \ 'ctagsbin'  : 'hasktags',
 "     \ 'ctagsargs' : '-x -c -o-',
