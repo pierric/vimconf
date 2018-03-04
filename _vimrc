@@ -1,4 +1,4 @@
-if has('win32') || has('win64')
+﻿if has('win32') || has('win64')
 	set encoding=utf-8
 	language messages zh_cn.UTF-8
 	set fileencodings=ucs-bom,utf-8,gbk,cp936
@@ -8,23 +8,24 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
 Plugin 'L9'
-" Plugin 'vim-scripts/calendar.vim--Matsumoto'
-" Plugin 'vimwiki/vimwiki'
-" Plugin 'vim-scripts/cscope.vim'
-" Plugin 'steffanc/cscopemaps.vim'
-" Plugin 'milkypostman/vim-togglelist'
-" Plugin 'vim-airline/vim-airline'
-" Plugin 'vim-airline/vim-airline-themes'
-" Plugin 'kien/ctrlp.vim'
-" Plugin 'tacahiroy/ctrlp-funky'
-" Plugin 'vim-scripts/taglist.vim'
-" Plugin 'majutsushi/tagbar'
+Plugin 'vim-scripts/calendar.vim--Matsumoto'
+Plugin 'vimwiki/vimwiki'
+Plugin 'vim-scripts/cscope.vim'
+Plugin 'steffanc/cscopemaps.vim'
+Plugin 'milkypostman/vim-togglelist'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tacahiroy/ctrlp-funky'
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/Mark--Karkat'
 Plugin 'vim-scripts/mru.vim.git'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Yggdroot/LeaderF'
 Plugin 'thaerkh/vim-workspace'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'rafi/awesome-vim-colorschemes'
 call vundle#end()
 filetype plugin indent on
 set fileencodings=ucs-bom,utf-8,gbk,cp936
