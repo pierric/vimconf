@@ -36,3 +36,6 @@ colorscheme angr
 " and invoke 'CheckHealth' in neovim
 let g:python3_host_prog='C:/Users/jiase/Miniconda3/envs/neovim-py3/python.exe'
 let g:python_host_prog='C:/Users/jiase/Miniconda3/envs/neovim-py2/python.exe'
+
+" paste with shift+insert (insert mode)
+imap <S-Insert> <C-R>*
