@@ -1,3 +1,9 @@
+
+" # install dein package manager
+" curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+" sh ./installer.sh ~/.config/nvim/dein
+" #and run the following command afterwards :call dein#install()
+
 set nocompatible
 set runtimepath+=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim " path to dein.vim
 call dein#begin(expand('~/.config/nvim/dein')) " plugins' root path
